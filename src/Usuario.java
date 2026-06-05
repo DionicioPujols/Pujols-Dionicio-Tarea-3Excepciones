@@ -1,5 +1,3 @@
-package src;
-
 public class Usuario {
     private String nombre;
     private int edad;
@@ -15,13 +13,13 @@ public class Usuario {
     }
 
     public Usuario(String nombre, int edad, String correo, double salario){
-        this.nombre  = nombre;
-        this.edad = edad;
-        this.correo =correo;
-        this.salario = salario;
+        setNombre(nombre);
+        setEdad(edad);  
+        setCorreo(correo);
+        setSalario(salario);
     }
 
-    //getter
+    //getters
     public String getNombre(){
         return nombre;
     }
@@ -48,5 +46,4 @@ public class Usuario {
     public void setSalario(double salario){
         this.salario = salario;
     }
-
 }
