@@ -7,28 +7,36 @@ public class Metodos {
         // Validación del Nombre
         if (nombre == null || nombre.trim().isEmpty() || nombre.trim().length() < 3) {
             throw new NombreInvalidoException("El nombre debe contener al menos 3 caracteres.");
+        }else{
+            System.out.println("Nombre ingresado correctamente.");
         }
 
         // Validación de la Edad
         if (edad < 18 || edad > 100) {
             throw new EdadInvalidaException("La edad debe ser mayor o igual a 18 años y menor o igual a 100 años.");
+        }else{
+            System.out.println("Edad ingresada correctamente.");
         }
 
         // Validación del Correo Electrónico
         if (!correo.contains("@") || !correo.contains(".")) {
             throw new CorreoInvalidoException("El correo electrónico no es válido.");
+        }else{
+            System.out.println("Correo ingresado correctamente.");
         }
 
         // Validación del Salario
         if (salario <= 0) {
             throw new SalarioInvalidoException("El salario debe ser mayor que cero.");
+        }else{
+            System.out.println("Salario ingresado correctamente.");
         }
     }
 
     public static void RegistrarUsuario(Scanner sc) {
         System.out.println("|| --- REGISTRAR USUARIO --- ||\n");
         
-                try {
+            try {
             System.out.print("Ingrese su nombre: ");
             String nombre = sc.nextLine();
 
@@ -43,29 +51,24 @@ public class Metodos {
             double salario = sc.nextDouble(); 
             sc.nextLine();             
 
-
             validarUsuario(nombre, edad, correo, salario);
-
 
             System.out.println("\nEl usuario ha sido registrado exitosamente...");
 
-        } catch (NombreInvalidoException e) {
-            System.out.println("\nError: " + e.getMessage());
+        } catch (NombreInvalidoException a) {
+            System.out.println("\nError: " + a.getMessage());
         } catch (EdadInvalidaException e) {
             System.out.println("\nError: " + e.getMessage());
-        } catch (CorreoInvalidoException e) {
-            System.out.println("\nError: " + e.getMessage());
-        } catch (SalarioInvalidoException e) {
-            System.out.println("\nError: " + e.getMessage());
-        } catch (InputMismatchException e) {
+        } catch (CorreoInvalidoException i) {
+            System.out.println("\nError: " + i.getMessage());
+        } catch (SalarioInvalidoException o) {
+            System.out.println("\nError: " + o.getMessage());
+        } catch (InputMismatchException u) {
             sc.nextLine();
             System.out.println("\nError: Debe ingresar un número válido.");
-
         } catch (Exception e) {
             System.out.println("\nError inesperado: " + e.getMessage());
-
         } finally {
-
             System.out.println("Proceso finalizado.");
         }
     }
